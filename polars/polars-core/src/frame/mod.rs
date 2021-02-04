@@ -821,7 +821,7 @@ impl DataFrame {
 
         if n_chunks == 1 {
             let idx_ca: UInt32Chunked = iter.into_iter().map(|opt| opt.map(|v| v as u32)).collect();
-            println!("idx_ca n_chunks {:?}", idx_ca.n_chunks());
+            println!("idx_ca n_chunks {:?}", idx_ca.chunks.len());
             let cols = self
                 .columns
                 .par_iter()
