@@ -285,6 +285,7 @@ where
             };
             Ok(Self::new_from_chunks(self.name(), vec![new_arr]))
         } else {
+            println!("NoSlice: {} {}", self.chunks.len(), idx.chunks.len());
             Err(PolarsError::NoSlice)
         }
     }
